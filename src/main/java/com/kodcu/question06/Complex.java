@@ -15,6 +15,16 @@ TODO:
  2 - Instructor will show the solutions
  3 - Refactor and ask questions 
 */
+
+
+// 1 - Don’t provide methods that modify the object’s state
+// 2 - Ensure that the class can’t be extended
+// 3 - Make all fields final.
+// 4 - Make all fields private.
+// 5 - Ensure exclusive access to any mutable components - (question 09)
+// 6 - Immutable objects are simple
+// 7 - Immutable objects are inherently thread-safe; they require no synchronization.
+// 8 - immutable objects can be shared freely
 public final class Complex {
     private final double re;
     private final double im;
@@ -47,6 +57,11 @@ public final class Complex {
 
     public Complex add(Complex c) {
         return new Complex(re + c.re, im + c.im);
+    }
+
+
+    public Complex substract(Complex c) {
+        return new Complex(re - c.re, im - c.im);
     }
 
     // TODO implement subtract
