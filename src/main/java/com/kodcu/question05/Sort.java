@@ -27,6 +27,7 @@ public class Sort {
     // Sort according to lenght of the String
     public static void main(String[] args) {
         List<String> words = Arrays.asList(args);
+
         System.out.println(words);
 
         // Anonymous class instance as a function object - obsolete!
@@ -37,13 +38,14 @@ public class Sort {
         });*/
 
         // Lambda expression as function object (replaces anonymous class)
-        /*Collections.sort(words,
-                (s1, s2) -> Integer.compare(s1.length(), s2.length()));*/
+       // Collections.sort(words,
+       //         (s1, s2) -> Integer.compare(s1.length(), s2.length()));
 
         //Collections.sort(words, comparingInt(String::length));
 
-
         words.sort(comparingInt(String::length));
+
+
 
         System.out.println(words);
         

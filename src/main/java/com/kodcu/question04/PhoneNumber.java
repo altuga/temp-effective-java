@@ -34,6 +34,10 @@ public final class PhoneNumber {
     }
 
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(areaCode, prefix, lineNum);
+    }
 
     @Override public boolean equals(Object o) {
         if (o == this)
