@@ -22,13 +22,15 @@ public final class Period {
      * @throws NullPointerException     if start or end is null
      */
     public Period(Date start, Date end) {
-       
+
+
         if (start.compareTo(end) > 0)
             throw new IllegalArgumentException(
                     start + " after " + end);
-        this.start = new Date(start.getTime()); // defensive copy
-        this.end = new Date(end.getTime());
 
+
+        this.start = new Date(start.getTime());
+        this.end = new Date(end.getTime());
     }
 
     public Date start() {
