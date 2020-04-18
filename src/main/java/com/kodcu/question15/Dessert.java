@@ -1,7 +1,7 @@
 package com.kodcu.question15;
 
-/*
-class Utensil {
+
+/*class Utensil {
     static final String NAME = "pot";
 }
 
@@ -9,5 +9,6 @@ class Dessert {
     static final String NAME = "pie";
 }
 */
+
 
 
