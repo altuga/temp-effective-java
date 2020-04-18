@@ -17,8 +17,9 @@ public class AreaCalculator {
 
 
     public static void main(String[] args) {
-
-
+        double value = 12;
+        double aoC = PhysicalConstants.PI.getValue() * value;
+        System.out.printf(" Area of Circle = " + aoC );
 
     }
 }
