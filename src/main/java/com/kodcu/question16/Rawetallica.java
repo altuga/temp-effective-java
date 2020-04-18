@@ -16,11 +16,12 @@ public class Rawetallica {
 
     public static void main(String[] args) {
         List<String> strings = new ArrayList<>();
-        add(strings, Integer.valueOf(42));
+        add(strings, "42");
         String s = strings.get(0); // Has compiler-generated cast
     }
 
-    private static void add(List list, Object o) {
+
+    private static <K> void add(List<K> list, K o) {
         list.add(o);
     }
 
