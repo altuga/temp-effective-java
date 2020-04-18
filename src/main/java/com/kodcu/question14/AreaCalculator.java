@@ -19,7 +19,11 @@ public class AreaCalculator {
     public static void main(String[] args) {
         double value = 12;
         double aoC = PhysicalConstants.PI.getValue() * value;
-        System.out.printf(" Area of Circle = " + aoC );
+        System.out.println(" Area of Circle = " + aoC );
+
+        double kiloOfUranium = 5 ;
+        double energy = kiloOfUranium * PhysicalConstants.C.getValue();
+        System.out.println(" Energy = " + energy );
 
     }
 }
