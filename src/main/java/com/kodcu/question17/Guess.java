@@ -1,5 +1,6 @@
 package com.kodcu.question17;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Random;
@@ -14,15 +15,18 @@ TODO
  4 - What is the lesson  ?
 */
 
-public class Guess {
-    private final Object[] choiceArray;
+public class Guess<T> {
+    //private final Object[] choiceArray;
+    private final List<T> choiceList;
 
-    public Guess(Collection choices) {
-        choiceArray = choices.toArray();
+
+    public Guess(Collection<T> choices) {
+        choiceList = new ArrayList<>(choices);
     }
-    public Object choose() {
+
+    public T choose() {
         Random rnd = ThreadLocalRandom.current();
-        return choiceArray[rnd.nextInt(choiceArray.length)];
+        return choiceList.get(rnd.nextInt(choiceList.size()));
 
     }
 
@@ -31,17 +35,18 @@ public class Guess {
 
         List<String> stringList = List.of("one", "two", "three", "four", "five", "six");
 
-        Guess guess = new Guess(intList);
+        //Guess guess = new Guess(intList);
+        Guess<Integer> guess = new Guess(intList);
 
         for (int i = 0; i < 10; i++) {
-            String choice = (String) guess.choose();
+            int  choice =guess.choose();
             System.out.println(choice);
         }
 
-        guess = new Guess(stringList);
+        Guess<String> guessString = new Guess<String>(stringList);
 
         for (int i = 0; i < 10; i++) {
-            String choice = (String) guess.choose();
+            String choice =  guessString.choose();
             System.out.println(choice);
         }
 
