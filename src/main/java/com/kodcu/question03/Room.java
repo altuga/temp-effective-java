@@ -19,4 +19,10 @@ public class Room {
         this.numJunkPiles = numJunkPiles;
     }
 
+
+    @Override
+    protected void finalize() throws Throwable {
+        numJunkPiles = 0;
+        System.out.println("numJunkPiles --> " + numJunkPiles);
+    }
 }

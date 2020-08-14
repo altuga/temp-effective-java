@@ -19,11 +19,15 @@ TODO:
 */
 
 public class Adult {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Room room = new Room(10);
+        room = null ;
+        System.gc();
+        Thread.sleep(1000);
+        System.gc();
         //Clean the room automagically
-        System.out.println(room.numJunkPiles); // clean numJunkPiles to zero
+        System.out.println(room ); // clean numJunkPiles to zero
 
 
     }
