@@ -33,7 +33,10 @@ public final class PhoneNumber {
         return (short) val;
     }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(areaCode, prefix, lineNum);
+    }
 
     @Override public boolean equals(Object o) {
         if (o == this)
