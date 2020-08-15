@@ -10,8 +10,10 @@ TODO
  3 - What is the lesson  ?
 */
 
-public class Stack {
-    public Object[] elements;
+
+public class Stack<E> {
+    //private E[] elements;
+    private Object[] elements;
     private int size = 0;
     private static final int DEFAULT_INITIAL_CAPACITY = 16;
 
@@ -20,21 +22,24 @@ public class Stack {
         elements = new Object[DEFAULT_INITIAL_CAPACITY];
     }
 
-    public void push(Object e) {
+    public void push(E e) {
         ensureCapacity();
         elements[size++] = e;
     }
 
-    public Object pop() {
+
+    @SuppressWarnings("unchecked")
+    public E pop() {
         if (size == 0) {
             throw new EmptyStackException();
         }
 
+        E result = (E) elements[--size];
 
-        Object result = elements[--size];
         elements[size] = null;
         return result;
     }
+
 
     /**
      * Ensure space for at least one more element, roughly doubling the capacity
@@ -48,7 +53,7 @@ public class Stack {
 
 
     public static void main(String[] args) {
-        Stack stack = new Stack();
+        Stack<String> stack = new Stack<String>();
         stack.push("hello"); // write 12 and run again
 
         String result = (String) stack.pop();
