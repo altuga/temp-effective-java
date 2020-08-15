@@ -14,10 +14,10 @@ TODO
 
 public class AreaCalculator {
 
-
-
     public static void main(String[] args) {
-
+        double mass = 5 ;
+        double speeed =  mass * Math.pow(PhysicalConstants.C.getValue(), 2) ;
+        System.out.println(speeed);
 
 
     }
